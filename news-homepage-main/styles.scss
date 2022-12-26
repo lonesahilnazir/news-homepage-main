@@ -255,3 +255,29 @@ a {
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    body{
+        padding: 2em 4em 3em;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+
+        .featured {
+            display: flex;
+            flex-direction: column;
+            
+            &__button {
+                align-self: flex-start;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    body {
+        padding: 2em 1em 3em;
+    }
+}
