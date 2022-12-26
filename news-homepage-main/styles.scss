@@ -15,7 +15,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    // outline: 1px solid greenyellow;
 }
 
 html {
@@ -78,7 +77,6 @@ a {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    // grid-template-rows: 2.5fr 1fr;
     gap: 4em 1.5em;
 
     .featured {
@@ -177,9 +175,15 @@ a {
     }
 
     .others {
-        display: grid;
-        grid: repeat(2, auto) / 6em auto;
-        gap: 0.7em 1em;
+        a {
+            display: grid;
+            grid: repeat(2, auto) / 6em auto;
+            gap: 0.7em 1em;
+
+            &:hover .others__heading {
+                color: var(--soft-red);
+            }
+        }
 
         &__image {
             @include grid-child(1,2,1,3);
@@ -194,6 +198,7 @@ a {
             display: flex;
             flex-direction: column;
             gap: 0.7em;
+            transition: color 0.2s ease;
 
             &--number {
                 font-size: 1.8em;
@@ -208,6 +213,7 @@ a {
         }
     }
 }
+
 // Media Queries
 
 @media screen and (max-width: 1265px) {
@@ -272,6 +278,11 @@ a {
             &__button {
                 align-self: flex-start;
             }
+
+            &__image {
+                height: 19em;
+                object-fit: cover;
+            }
         }
     }
 }
@@ -279,5 +290,6 @@ a {
 @media screen and (max-width: 425px) {
     body {
         padding: 2em 1em 3em;
+        gap: 1.5em;
     }
 }
