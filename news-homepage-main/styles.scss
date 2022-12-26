@@ -235,3 +235,23 @@ a {
         }
     }
 }
+
+@media screen and (max-width: 1055px) {
+    body {
+        padding: 3em 5em 4em;
+    }
+    .main {
+        .featured {
+            grid-column: 1/4;
+
+            &__button {
+                align-self: center;
+                justify-self: end;
+            }
+        }
+
+        .new {
+            grid-column: 1/4;
+        }
+    }
+}
