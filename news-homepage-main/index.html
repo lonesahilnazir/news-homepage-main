@@ -28,6 +28,20 @@
         <li class="nav__links--item"><a href="#">Trending</a></li>
         <li class="nav__links--item"><a href="#">Categories</a></li>
       </ul>
+      <div class="menu">
+        <svg class="menu__open" width="40" height="17" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#00001A" fill-rule="evenodd">
+            <path d="M0 0h40v3H0zM0 7h40v3H0zM0 14h40v3H0z" />
+            <path d="M0 0h40v3H0z" />
+          </g>
+        </svg>
+        <svg class="menu__closed" width="32" height="31" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#00001A" fill-rule="evenodd">
+            <path d="m2.919.297 28.284 28.284-2.122 2.122L.797 2.419z" />
+            <path d="M.797 28.581 29.081.297l2.122 2.122L2.919 30.703z" />
+          </g>
+        </svg>
+      </div>
     </nav>
   </header>
   <main class="main">
@@ -95,5 +109,21 @@
       </a>
     </article>
   </main>
+
+  <script>
+    const openMenu = document.querySelector('.menu__open');
+    const closedMenu = document.querySelector('.menu__closed');
+    const navLinks = document.querySelector('.nav__links');
+    openMenu.addEventListener('click', (event) => {
+      navLinks.style.display = 'flex';
+      openMenu.style.display = 'none'
+      closedMenu.style.display = 'block';
+    });
+    closedMenu.addEventListener('click', (event) => {
+      navLinks.style.display = 'none';
+      closedMenu.style.display = 'none';
+      openMenu.style.display = 'block';
+    });
+  </script>
 </body>
 </html>
